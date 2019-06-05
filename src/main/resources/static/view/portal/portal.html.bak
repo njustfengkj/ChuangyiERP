@@ -1,0 +1,148 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>无锡市创意模具有限公司</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="https://v40.pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        function declarForOvertimeWorking()
+        {
+            $("#contentFrame").attr("src","http://localhost:8080/overtimeWorking/getEditPage")
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-cloud"></i><b> ERP管理系统</b></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="navUserRole"><i class="fa d-inline fa-lg fa-bookmark-o"></i> 用户角色</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="navUserName"><i class="fa d-inline fa-lg fa-envelope-o"></i> 用户名</a>
+                </li>
+            </ul>
+            <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i>
+                Sign in</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" id="portalTab" role="tablist">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">人事</a>
+<!--                    <div class="dropdown-menu">-->
+<!--                    <a class="dropdown-item" href="#attendance">考勤</a>-->
+<!--                    <a class="dropdown-item" href="#salary">薪酬</a>-->
+<!--                    </div>-->
+                    <ul class="dropdown-menu" role="menu" aria-label="tabDropHr">
+                        <a class="dropdown-item" href="#attendance" tabindex="-1" data-toggle="tab">考勤</a>
+                        <a class="dropdown-item" href="#salary" tabindex="-1" data-toggle="tab">薪酬</a>
+                        <a class="dropdown-item" href="#overtimeWorking" tabindex="-1" data-toggle="tab">加班</a>
+                        <a class="dropdown-item" href="#shifts" tabindex="-1" data-toggle="tab">班次</a>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">财务</a>
+<!--                    <div class="dropdown-menu">-->
+<!--                    <a class="dropdown-item" href="#invoiceManagement">发票管理</a>-->
+<!--                    <a class="dropdown-item" href="#reconciliation">对账</a>-->
+<!--                    </div>-->
+                    <ul class="dropdown-menu" role="menu" aria-label="tabDropFinance">
+                        <a class="dropdown-item" href="#invoiceManagement" tabindex="-1" data-toggle="tab">发票管理</a>
+                        <a class="dropdown-item" href="#reconciliation" tabindex="-1" data-toggle="tab">对账</a>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">系统管理</a>
+<!--                    <div class="dropdown-menu">-->
+<!--                    <a class="dropdown-item" href="#invoiceManagement">发票管理</a>-->
+<!--                    <a class="dropdown-item" href="#reconciliation">对账</a>-->
+<!--                    </div>-->
+                    <ul class="dropdown-menu" role="menu" aria-label="tabDropSysMgmt">
+                        <a class="dropdown-item" href="#workingCalenderSetting" tabindex="-1" data-toggle="tab">法定节假日工作日历以及加班费设置</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="portalTabContent" class="tab-content" style="float:left;width:20%">
+    <div class="tab-pane fade show active" id="attendance" role="tabpanel" aria-labelledby="attendance-tab">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#attendenceQuery">考勤情况查询</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="salary" role="tabpanel" aria-labelledby="salary-tab">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">薪酬调整</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/overtimeWorking/getEditPage" target="contentFrame">薪酬结算</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="overtimeWorking" role="tabpanel" aria-labelledby="attendance-tab">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/overtimeWorking/getEditPage" target="contentFrame">加班申报</a>
+                <%--<button class="navbar-link" onclick="declarForOvertimeWorking()" target="contentFrame">加班申报</button>--%>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="shifts" role="tabpanel" aria-labelledby="attendance-tab">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/shift/getMainPage" target="contentFrame">班次管理</a>
+                <a class="nav-link" href="http://localhost:8080/schedule" target="contentFrame">排班管理</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="workingCalenderSetting" role="tabpanel" aria-labelledby="attendance-tab">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/sysMgmt/getWorkingCalenderEditPage" target="contentFrame">工作日历设定</a>
+                <a class="nav-link" href="http://localhost:8080/sysMgmt/getStatutoryHolidaySettingPage" target="contentFrame">法定节假日设定</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="invoiceManagement" role="tabpanel" aria-labelledby="invoiceManagement-tab">发票管理</div>
+    <div class="tab-pane fade" id="reconciliation" role="tabpanel" aria-labelledby="reconciliation-tab">对账</div>
+</div>
+<div style="float:left;width:80%">
+    <iframe src="" name="contentFrame" id="contentFrame" scrolling="yes" frameborder="0" allowtransparency="true" style="width:100%;height: 100%"></iframe>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    $(function () {
+        $("#navUserName").text("<%=request.getSession().getAttribute("userName")%>");
+        $("#navUserRole").text("<%=request.getSession().getAttribute("roleName")%>");
+    })
+</script>
+</html>

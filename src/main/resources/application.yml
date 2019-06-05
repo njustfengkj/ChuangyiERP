@@ -1,0 +1,10 @@
+server:
+  port: 8889
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/chuangyi?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: test_123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  type-aliases-package: com.feng.chuangyierp.mapper
