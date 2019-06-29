@@ -25,7 +25,7 @@ public class PortalCtrl {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
 
-        Map queryParam = new HashMap<String, Object>();
+        Map<String, Object> queryParam = new HashMap<>();
         queryParam.put("name", userName);
         SysUser user = sysUserService.query(userName);
 //        SysRole sysRole=null;
