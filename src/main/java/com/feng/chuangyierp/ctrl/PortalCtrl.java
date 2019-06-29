@@ -21,31 +21,26 @@ public class PortalCtrl {
     private SysRoleService sysRoleService;
 
     @RequestMapping(value = "/getPortalPage")
-    public String getPortalPage(HttpServletRequest request, HttpServletResponse response)
-    {
-        String userName=request.getParameter("userName");
-        String password=request.getParameter("password");
+    public String getPortalPage(HttpServletRequest request, HttpServletResponse response) {
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
 
-        Map queryParam=new HashMap<String,Object>();
-        queryParam.put("name",userName);
-        SysUser user=sysUserService.query(userName);
+        Map queryParam = new HashMap<String, Object>();
+        queryParam.put("name", userName);
+        SysUser user = sysUserService.query(userName);
 //        SysRole sysRole=null;
-        if(null!=user)
-        {
-            Map<String,Object> queryparam=new HashMap<String, Object>();
+        if (null != user) {
+            Map<String, Object> queryparam = new HashMap<String, Object>();
             queryParam.clear();
 //            queryParam.put("id",user.getRoleid());
 //            sysRole=sysRoleService.query(queryParam);
         }
-        if(userName.equals(user.getName())&&password.equals(user.getPassword()))
-        {
-            request.getSession().setAttribute("userName",userName);
-            request.getSession().setAttribute("userNickName",user.getNc());
+        if (userName.equals(user.getName()) && password.equals(user.getPassword())) {
+            request.getSession().setAttribute("userName", userName);
+            request.getSession().setAttribute("userNickName", user.getNc());
 //            request.getSession().setAttribute("roleName",sysRole.getName());
-            return "portal/portal";
-        }
-        else
-        {
+            return "portal.html/portal.html";
+        } else {
             return "error";
         }
     }
